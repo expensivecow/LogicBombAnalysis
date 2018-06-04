@@ -1,7 +1,6 @@
 package org.mike.logicbomb.components;
 
 import org.mike.logicbomb.core.Analysis;
-import org.mike.logicbomb.core.Analysis.Condition;
 
 import soot.Value;
 
