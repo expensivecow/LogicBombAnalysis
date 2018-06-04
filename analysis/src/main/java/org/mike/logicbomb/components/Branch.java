@@ -1,4 +1,4 @@
-package org.mike.logicbomb.units;
+package org.mike.logicbomb.components;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.mike.logicbomb.helpers.Truple;
-import org.mike.logicbomb.helpers.Usage;
+import org.mike.logicbomb.core.Analysis;
+import org.mike.logicbomb.core.Analysis.Condition;
 
 import soot.Local;
 import soot.Unit;

@@ -1,9 +1,12 @@
-package org.mike.logicbomb.units;
+package org.mike.logicbomb.components;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+
+import org.mike.logicbomb.core.Analysis;
+import org.mike.logicbomb.core.Analysis.CBlock;
 
 import soot.Body;
 import soot.Value;

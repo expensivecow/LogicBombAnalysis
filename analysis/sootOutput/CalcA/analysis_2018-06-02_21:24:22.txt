@@ -1,0 +1,293 @@
+Logic Bomb Condition Analysis
+Version +1.2
+IF statement encountered : 17
+APK Stats : 3 Methods with used conditions (0.05084745762711865) for a total of 4 Blocks with condition used (0.23529411764705882)
+The methods are : 
+com.bae.drape.gui.calculator.CalculatorActivity.$SWITCH_TABLE$com$bae$drape$gui$calculator$CalculatorActivity$Operation (1)
+com.bae.drape.gui.calculator.CalculatorActivity$17.onKey (1)
+com.bae.drape.gui.calculator.CalculatorActivity.handleOperation (2)
+
+exploration : branch [# of units, # of cond. var. used, # of vars][defs,use,cond/tot,cond/use]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$13.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$11.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$6.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$12.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$10.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$5.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$8.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$5.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$13.onClick
+[4,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$9.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$6.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$12.onClick
+[4,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$11.onClick
+[4,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$7.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$16.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$10.onClick
+[4,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$17.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$7.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.R$drawable.<init>
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$14.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.R$attr.<init>
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.BuildConfig.<init>
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$14.onClick
+[4,0,0]
+=========================================
+com.bae.drape.gui.calculator.R$layout.<init>
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$16.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$Operation.<clinit>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.R.<init>
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$15.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.R$string.<init>
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$15.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$2.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.R$id.<init>
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$2.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$1.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$1.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$3.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$Operation.<init>
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$3.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$4.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$Operation.valueOf
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$4.onClick
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$Operation.values
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.$SWITCH_TABLE$com$bae$drape$gui$calculator$CalculatorActivity$Operation
+[9,1,1]
+
+Exploring block 1
+Condition : [$r0 == null]
+Stats : [21 & 10 & 0.047619047619047616 & 0.5]
+Branch 2-0 [1 & 0.0 & 0 & 0 & 0.0 & 0.0 & 0.0 \ ]
+Branch 2-1 [20 & 1.0 & 15 & 10 & 2.0 & 0.05 & 0.5 \ ]
+
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity$17.onKey
+[7,1,1]
+
+Exploring block 1
+Condition : [$i0 != 0]
+Stats : [58 & 21 & 0.017241379310344827 & 0.02564102564102564]
+Branch 1-0 [58 & 1.0 & 8 & 21 & 39.0 & 0.017241379310344827 & 0.02564102564102564 \ ]
+
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.<init>
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.access$0
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.access$1
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.access$2
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.access$3
+[1,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.handleDecimal
+[8,3,0]
+
+Exploring block 1
+Condition : [$r1 != $r2]
+Stats : [1 & 0 & 0.0 & 0.0]
+Branch 3-0 [1 & 0.0 & 0 & 0 & 0.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 2
+Condition : [$z0 == 0]
+Stats : [15 & 3 & 0.0 & 0.0]
+Branch 4-1 [9 & 0.0 & 6 & 2 & 2.0 & 0.0 & 0.0 \ ]
+Branch 4-0 [6 & 0.0 & 4 & 1 & 1.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 3
+Condition : [$z0 != 0]
+Stats : [4 & 0 & 0.0 & 0.0]
+Branch 5-0 [4 & 0.0 & 3 & 0 & 0.0 & 0.0 & 0.0 \ ]
+
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.handleNumber
+[11,3,0]
+
+Exploring block 1
+Condition : [$r1 != $r2]
+Stats : [1 & 0 & 0.0 & 0.0]
+Branch 6-0 [1 & 0.0 & 0 & 0 & 0.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 2
+Condition : [$z0 == 0]
+Stats : [6 & 1 & 0.0 & 0.0]
+Branch 7-0 [2 & 0.0 & 2 & 0 & 0.0 & 0.0 & 0.0 \ ]
+Branch 7-1 [4 & 0.0 & 2 & 1 & 0.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 3
+Condition : [$z0 == 0]
+Stats : [2 & 0 & 0.0 & 0.0]
+Branch 8-0 [2 & 0.0 & 1 & 0 & 0.0 & 0.0 & 0.0 \ ]
+
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.handleOperation
+[13,2,2]
+
+Exploring block 1
+Condition : [$z0 == 0]
+Stats : [62 & 27 & 0.0 & 0.0]
+Branch 9-0 [62 & 0.0 & 28 & 27 & 49.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 2
+Condition : [$i0 < 12]
+Stats : [8 & 3 & 0.125 & 0.2]
+Branch 10-0 [8 & 1.0 & 6 & 3 & 5.0 & 0.125 & 0.2 \ ]
+
+
+Exploring block 3
+Condition : [$i0 >= 13]
+Stats : [7 & 3 & 0.14285714285714285 & 0.2]
+Branch 11-0 [7 & 1.0 & 6 & 3 & 5.0 & 0.14285714285714285 & 0.2 \ ]
+
+
+Exploring block 4
+Condition : [$z0 == 0]
+Stats : [5 & 1 & 0.0 & 0.0]
+Branch 12-1 [4 & 0.0 & 4 & 1 & 2.0 & 0.0 & 0.0 \ ]
+Branch 12-0 [1 & 0.0 & 1 & 0 & 0.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 5
+Condition : [$i0 > 1]
+Stats : [3 & 0 & 0.0 & 0.0]
+Branch 13-0 [3 & 0.0 & 3 & 0 & 1.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 6
+Condition : [$z0 == 0]
+Stats : [10 & 1 & 0.0 & 0.0]
+Branch 14-0 [10 & 0.0 & 7 & 1 & 4.0 & 0.0 & 0.0 \ ]
+
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.initControls
+[21,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.initScreenLayout
+[8,2,0]
+
+Exploring block 1
+Condition : [$i0 < 400]
+Stats : [1 & 0 & 0.0 & 0.0]
+Branch 15-0 [1 & 0.0 & 0 & 0 & 0.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 2
+Condition : [$i1 >= 300]
+Stats : [2 & 0 & 0.0 & 0.0]
+Branch 16-0 [2 & 0.0 & 2 & 0 & 0.0 & 0.0 & 0.0 \ ]
+
+
+Exploring block 3
+Condition : [$i1 >= 300]
+Stats : [34 & 16 & 0.0 & 0.0]
+Branch 17-0 [34 & 0.0 & 18 & 16 & 0.0 & 0.0 & 0.0 \ ]
+
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.reset
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.button5Clicked
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.onCreate
+[2,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.onCreateOptionsMenu
+[3,0,0]
+=========================================
+com.bae.drape.gui.calculator.CalculatorActivity.onOptionsItemSelected
+[4,0,0]

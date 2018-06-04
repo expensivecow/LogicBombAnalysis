@@ -1,9 +1,7 @@
 #!/bin/bash
 
-ANDROID_JARS_PATH="android"
-JAVA_JARPATH="\
-jars/soot-3.0.1-jar-with-dependencies2.jar:.
-"
+ANDROID_JARS_PATH="/home/mike/Dev/Git/Logic-Bomb-Condition-Analysis/android"
+JAVA_JARPATH="/home/mike/Dev/Git/Logic-Bomb-Condition-Analysis/jars/soot-3.0.1-jar-with-dependencies.jar"
 
 APK_FILE=$1
 
@@ -30,5 +28,5 @@ SOOT_CMD="-android-jars $ANDROID_JARS_PATH \
 java \
  -Xmx8g \
  -cp  ${JAVA_JARPATH} \
- Analysis \
+ /analysis/src/main/java/org/mike/logicbomb/analysis/Analysis.java \
  ${SOOT_CMD}\

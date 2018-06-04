@@ -1,6 +1,6 @@
-package org.mike.logicbomb.helpers;
+package org.mike.logicbomb.components;
 
-public class Truple{
+public class Truple {
 	private int a,b,c;
 
 	public Truple(int a, int b, int c){
