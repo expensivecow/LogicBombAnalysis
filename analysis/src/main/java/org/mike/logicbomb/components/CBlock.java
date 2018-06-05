@@ -145,6 +145,14 @@ public class CBlock{
 		}
 		return sb.toString();
 	}
+	
+	public Set<Branch> getBranches() {
+		return branches;
+	}
+	
+	public List<Condition> getConditions() {
+		return this.conditions;
+	}
 
 	public int getAssignments(){
 		int asst = 0;

@@ -54,13 +54,21 @@ public class Method {
 	public int getTotalBlocks(){
 		return conditions.size();
 	}
+	
+	public int getDeclaredVariables() {
+		return this.b.getLocals().size();
+	}
+	
+	public ArrayList<CBlock> getConditions() {
+		return conditions;
+	}
 
 
 	@Override
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.getName() + "\n");
-		sb.append("["+this.b.getLocals().size()+","+getAllCondVar()+","+this.getNbBlocksWithUsedCondition()+"]\n");
+		sb.append("["+getDeclaredVariables()+","+getAllCondVar()+","+this.getNbBlocksWithUsedCondition()+"]\n");
 		int j = 0;
 
 		for (CBlock c : this.conditions) {

@@ -247,5 +247,4 @@ public class Branch {
 
 		return sb.toString();
 	}
-
 }
