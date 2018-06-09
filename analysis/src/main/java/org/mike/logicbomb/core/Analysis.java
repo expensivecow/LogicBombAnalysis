@@ -50,6 +50,7 @@ public class Analysis {
 	}
 	
 	public void startAnalysis(String[] args) {
+		G.v().reset();
 		//prefer Android APK files// -src-prec apk
 		Options.v().set_src_prec(Options.src_prec_apk);
 		Options.v().process_multiple_dex();
@@ -73,47 +74,43 @@ public class Analysis {
 		Scene.v().addBasicClass("java.lang.System",SootClass.SIGNATURES);
 		
 		time = 0;
-
-		//Main transform
-		PackManager.v().getPack("jtp").add(new Transform("jtp.myInstrumenter", new BodyTransformer() {
-
-			@Override
-			protected void internalTransform(final Body b, String phaseName, @SuppressWarnings("rawtypes") Map options) {
-					Method m = new Method(b);
-					BriefBlockGraph blocks = new BriefBlockGraph(b);
-					Iterator<Block> iter = blocks.iterator();
-
-					//The first pass is based on the basic block graph
-					while (iter.hasNext()) {
-						Block current = iter.next();
-
-						Unit tail = current.getTail();
-
-						//Need to add support for switch statements
-						if (tail instanceof IfStmt) {
-							time++;
-
-							// 1. Define the boundaries of the blocks and branches (using the basic block graph)
-							CBlock cBlock = exploreCondition((IfStmt) tail, current, blocks, b, time);
-
-							// 2. Explore the unit graph of every branch to complete the stats
-							cBlock.exploreBranches();
-
-							// 3. Add the conditional block to the collection
-							m.addCBlock(cBlock);
+		if (!PackManager.v().hasPack("jtp.myInstrumenter")) {
+			PackManager.v().getPack("jtp").add(new Transform("jtp.myInstrumenter", new BodyTransformer() {
+				@Override
+				protected void internalTransform(final Body b, String phaseName, @SuppressWarnings("rawtypes") Map options) {
+						Method m = new Method(b);
+						BriefBlockGraph blocks = new BriefBlockGraph(b);
+						Iterator<Block> iter = blocks.iterator();
+	
+						//The first pass is based on the basic block graph
+						while (iter.hasNext()) {
+							Block current = iter.next();
+	
+							Unit tail = current.getTail();
+	
+							//Need to add support for switch statements
+							if (tail instanceof IfStmt) {
+								time++;
+	
+								// 1. Define the boundaries of the blocks and branches (using the basic block graph)
+								CBlock cBlock = exploreCondition((IfStmt) tail, current, blocks, b, time);
+	
+								// 2. Explore the unit graph of every branch to complete the stats
+								cBlock.exploreBranches();
+	
+								// 3. Add the conditional block to the collection
+								m.addCBlock(cBlock);
+							}
 						}
-
+						methods.add(m);
 					}
-
-					methods.add(m);
-				}
-			//}
-		}));
+				//}
+			}));
+		}
 
 		// run soot logic
 		soot.Main.main(args);
 
-		//printOutput();
 		saveOutput();
 	}
 	
@@ -232,12 +229,8 @@ public class Analysis {
 	}
 	
 	private void saveOutput() {
-		System.out.println("Hello World");
-		
 		try {
 		    conn = DriverManager.getConnection(dbPath + dbUserCredentials);
-
-		    System.out.println("Connection Successful!");
 
 		    // Save Application Row
 		    CallableStatement createApplicationRow = conn.prepareCall("{call CREATE_APPLICATION(?, ?, ?, ?, ?, ?)}");
