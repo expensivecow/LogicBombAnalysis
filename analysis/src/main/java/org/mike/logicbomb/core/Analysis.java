@@ -111,6 +111,7 @@ public class Analysis {
 		// run soot logic
 		soot.Main.main(args);
 
+		//printOutput();
 		saveOutput();
 	}
 	
@@ -231,7 +232,8 @@ public class Analysis {
 	private void saveOutput() {
 		try {
 		    conn = DriverManager.getConnection(dbPath + dbUserCredentials);
-
+		    
+		    conn.setAutoCommit(false);
 		    // Save Application Row
 		    CallableStatement createApplicationRow = conn.prepareCall("{call CREATE_APPLICATION(?, ?, ?, ?, ?, ?)}");
 		    createApplicationRow.setString("applicationName", apkName);
@@ -247,7 +249,7 @@ public class Analysis {
 		    	if (!Objects.isNull(m)) {
 		    		CallableStatement createMethodRow = conn.prepareCall("{call CREATE_METHOD(?, ?, ?, ?, ?)}");
 			    	createMethodRow.setString("applicationName", apkName);
-			    	createMethodRow.setString("methodName", m.getName());
+			    	createMethodRow.setNString("methodName", m.getName());
 			    	createMethodRow.setString("numDeclaredVarInMethod", Integer.toString(m.getDeclaredVariables()));
 			    	createMethodRow.setString("numVarUsedInMethod", Integer.toString(m.getAllCondVar()));
 			    	createMethodRow.setString("numBlocksWithCondVarUsed", Integer.toString(m.getNbBlocksWithUsedCondition()));
@@ -266,6 +268,7 @@ public class Analysis {
 				    	createCondBlockRow.setString("numTotalUsages", Integer.toString(c.getUse()));
 				    	
 				    	createCondBlockRow.execute();
+				    	conn.commit();
 
 				    	int j = 1;
 				    	for (Branch b : c.getBranches()) {
@@ -280,12 +283,16 @@ public class Analysis {
 					    	createBranchRow.setString("numTotalVarUsages", Integer.toString((int) b.getTotalUse()));
 					    	
 					    	createBranchRow.execute();
+					    	conn.commit();
 				    		j++;
 				    	}
 			    	}
+				    conn.commit();
 		    	}
 		    }
 		    
+		    conn.commit();
+		    conn.close();
 		} catch (SQLException ex) {
 		    // handle any errors
 		    System.out.println("SQLException: " + ex.getMessage());

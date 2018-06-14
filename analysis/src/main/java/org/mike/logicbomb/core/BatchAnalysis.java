@@ -3,6 +3,7 @@ package org.mike.logicbomb.core;
 import java.awt.List;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -25,8 +26,12 @@ public class BatchAnalysis {
 	public static void main(String[] args) {
 		//exploreDirectoryRecursively(args, new File(apkPoolDir), new File(androidJarPath));
 		
+		long startTime = System.nanoTime();
 		exploreDirectoryRecursively(args, new File(apkPoolDir), new File(androidJarPath));
-		System.out.println("Finished Analyzing " + numApplications + " Applications.");
+		System.out.println("Finished Analyzing " + numApplications + " Application(s).");
+		final long duration = System.nanoTime() - startTime;
+		
+		System.out.println("Time elapsed: " + new Date(duration / 1000).toString());
 	}
 	
 	private static void exploreDirectoryRecursively(String[] args, File dir, File androidJarPath) {
